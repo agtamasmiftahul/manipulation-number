@@ -4,11 +4,30 @@ var level1b = document.getElementById('level1b');
 var level2a = document.getElementById('level2a');
 var level2b = document.getElementById('level2b');
 var numberBefore;
+var number0;
+var number1;
+var result;
 
 function showLevel0() {
   numberBefore = level0.value;
   if (isNaN(numberBefore) !== true) {
-    Materialize.toast(numberBefore, 4000);
+    result = Number(numberBefore);
+    Materialize.toast(result, 4000);
+  } else {
+    Materialize.toast('Please, input a number', 4000);
+  }
+}
+
+function showAdd() {
+  number0 = level1a.value;
+  number1 = level1b.value;
+  if (isNaN(number0) !== true && isNaN(number1) !== true) {
+    result = Number(number0) + Number(number1);
+    Materialize.toast(`${number0} + ${number1} = ${result}`);
+  } else if (isNaN(number0) !== true && isNaN(number1) === true) {
+    Materialize.toast('Your first input is a number, but your second input is not a number. Please, input a number', 4000);
+  } else if (isNaN(number0) === true && isNaN(number1) !== true) {
+    Materialize.toast('Your second input is a number, but your first input is not a number. Please, input a number', 4000);
   } else {
     Materialize.toast('Please, input a number', 4000);
   }
