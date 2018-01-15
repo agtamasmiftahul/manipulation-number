@@ -6,6 +6,7 @@ var level2b = document.getElementById('level2b');
 var numberBefore;
 var number0;
 var number1;
+var boolean0;
 var result;
 
 function showLevel0() {
