@@ -4,6 +4,8 @@ var level1b = document.getElementById('level1b');
 var level2a = document.getElementById('level2a');
 var level2b = document.getElementById('level2b');
 var level2c = document.getElementById('level2c');
+var firstArray = ['First', 'Second', 'Third'];
+var secondArray = ['Fourth', 'Fifth', 'Sixth', 'Seventh'];
 var numberBefore;
 var number0;
 var number1;
@@ -152,5 +154,25 @@ function showRemainderLevel2() {
     Materialize.toast(`${number0} % ${textBefore} % ${boolean0}= ${result}`, 1000);
   } else {
     Materialize.toast('Please, input a number', 1000);
+  }
+}
+
+function showConcat() {
+  result = firstArray.concat(secondArray);
+  Materialize.toast(result, 1000);
+}
+
+function showPush() {
+  firstArray.push(secondArray);
+  Materialize.toast(firstArray, 1000);
+}
+
+function showPop() {
+
+  if (secondArray.length !== 0) {
+    secondArray.pop();
+    Materialize.toast(secondArray, 1000);
+  } else {
+    Materialize.toast(`End of data`, 1000);
   }
 }
