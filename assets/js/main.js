@@ -12,9 +12,9 @@ function showLevel0() {
   numberBefore = level0.value;
   if (isNaN(numberBefore) !== true) {
     result = Number(numberBefore);
-    Materialize.toast(result, 4000);
+    Materialize.toast(`Your number is ${result}`, 1000);
   } else {
-    Materialize.toast('Please, input a number', 4000);
+    Materialize.toast('Please, input a number', 1000);
   }
 }
 
@@ -23,12 +23,27 @@ function showAdd() {
   number1 = level1b.value;
   if (isNaN(number0) !== true && isNaN(number1) !== true) {
     result = Number(number0) + Number(number1);
-    Materialize.toast(`${number0} + ${number1} = ${result}`);
+    Materialize.toast(`${number0} + ${number1} = ${result}`, 1000);
   } else if (isNaN(number0) !== true && isNaN(number1) === true) {
-    Materialize.toast('Your first input is a number, but your second input is not a number. Please, input a number', 4000);
+    Materialize.toast('Your first input is a number, but your second input is not a number. Please, input a number', 1000);
   } else if (isNaN(number0) === true && isNaN(number1) !== true) {
-    Materialize.toast('Your second input is a number, but your first input is not a number. Please, input a number', 4000);
+    Materialize.toast('Your second input is a number, but your first input is not a number. Please, input a number', 1000);
   } else {
-    Materialize.toast('Please, input a number', 4000);
+    Materialize.toast('Please, input a number', 1000);
+  }
+}
+
+function showSubstract() {
+  number0 = level1a.value;
+  number1 = level1b.value;
+  if (isNaN(number0) !== true && isNaN(number1) !== true) {
+    result = Number(number0) - Number(number1);
+    Materialize.toast(`${number0} - ${number1} = ${result}`, 1000);
+  } else if (isNaN(number0) !== true && isNaN(number1) === true) {
+    Materialize.toast('Your first input is a number, but your second input is not a number. Please, input a number', 1000);
+  } else if (isNaN(number0) === true && isNaN(number1) !== true) {
+    Materialize.toast('Your second input is a number, but your first input is not a number. Please, input a number', 1000);
+  } else {
+    Materialize.toast('Please, input a number', 1000);
   }
 }
